@@ -1,0 +1,44 @@
+### AutoVala Project ###
+autovala_version: 30
+project_name: thinpi
+*vala_version: 0.48
+
+*vala_binary: src/thinpi
+*version: 0.3.0
+*vala_check_package: atk
+*vala_check_package: cairo-gobject
+*vala_check_package: gdk-3.0
+*vala_check_package: gdk-pixbuf-2.0
+*vala_check_package: gee-0.8
+*vala_check_package: gio-2.0
+*vala_check_package: glib-2.0
+*vala_check_package: gobject-2.0
+*vala_check_package: gtk+-3.0
+*vala_check_package: libxml-2.0
+*vala_check_package: pango
+*vala_check_package: x11
+*vala_source: classes/tppublic.vala
+*vala_source: classes/tpserverclass.vala
+*vala_source: interface/tpconfig.vala
+*vala_source: interface/tpconnect.vala
+*vala_source: interface/tpsettings.vala
+*vala_source: thinpi.vala
+*vala_source: utils/tpconfig-utils.vala
+*vala_source: utils/tpxml.vala
+
+
+*po: po
+
+*translate: vala src/classes/tppublic.vala
+*translate: vala src/classes/tpserverclass.vala
+*translate: vala src/interface/tpconfig.vala
+*translate: vala src/interface/tpconnect.vala
+*translate: vala src/interface/tpsettings.vala
+*translate: vala src/thinpi.vala
+*translate: vala src/utils/tpconfig-utils.vala
+*translate: vala src/utils/tpxml.vala
+
+*data: data/local
+
+*doc: doc
+

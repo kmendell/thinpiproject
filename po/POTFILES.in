@@ -1,0 +1,8 @@
+src/classes/tppublic.vala
+src/classes/tpserverclass.vala
+src/interface/tpconfig.vala
+src/interface/tpconnect.vala
+src/interface/tpsettings.vala
+src/thinpi.vala
+src/utils/tpconfig-utils.vala
+src/utils/tpxml.vala
