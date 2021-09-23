@@ -5,7 +5,7 @@ int showSettings (string[] args) {
 
     try {
         var builder = new Builder ();
-        builder.add_from_file ("/thinpi/Interface/settings.glade");
+        builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"settings.ui"));
         //  builder.connect_signals (null);
         var window2 = builder.get_object ("settingsWindow") as Window;
         var notebookMenu = builder.get_object("settingMenuBar") as Notebook;

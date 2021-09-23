@@ -50,7 +50,9 @@ pkg_check_modules(DEPS REQUIRED ${MODULES_TO_CHECK})
 
 add_subdirectory(src/utils)
 add_subdirectory(po)
+add_subdirectory(data/pixmaps)
 add_subdirectory(src/interface)
 add_subdirectory(src/classes)
+add_subdirectory(data/interface)
 add_subdirectory(src)
 

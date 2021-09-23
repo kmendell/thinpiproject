@@ -11,7 +11,7 @@ int main (string[] args) {
 
     try {
         var builder = new Builder ();
-        builder.add_from_file ("/thinpi/Interface/connect-manager-debug.glade");
+        builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"connect-manager-debug.ui"));;
         var serverList = builder.get_object("serverSelect") as ComboBoxText;
         var wrongLabel = builder.get_object("wrongLabel") as Label;
         var settingsButton = builder.get_object("settingsButton") as Button;

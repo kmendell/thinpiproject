@@ -5,7 +5,7 @@ int showConfig (string[] args) {
 
     try {
         var builder = new Builder ();
-        builder.add_from_file ("/thinpi/Interface/configmanager.glade");
+        builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"configmanager.ui"));;
         //  builder.connect_signals (null);
         var window3 = builder.get_object ("configWindow") as Window;
         window3.destroy.connect (window3.close);
