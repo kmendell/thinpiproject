@@ -80,9 +80,6 @@ class TPWindow {
         var removeButton = builder.get_object("removeButton") as Button;
 
         ConfigUtils.setupLoad(0, serverNameText, serverIPText, serverDomainText, serverScreenText, configList);
-        
-        
-        //  window.show_all ();
 
         configList.changed.connect (() => {
             int id = configList.active;
