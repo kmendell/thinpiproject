@@ -43,6 +43,8 @@ set (APP_SOURCES ${APP_SOURCES} interface/tpconnect.vala)
 set (APP_SOURCES ${APP_SOURCES} interface/tpsettings.vala)
 set (APP_SOURCES ${APP_SOURCES} thinpi.vala)
 set (APP_SOURCES ${APP_SOURCES} utils/tpconfig-utils.vala)
+set (APP_SOURCES ${APP_SOURCES} utils/tpsettings-utils.vala)
+set (APP_SOURCES ${APP_SOURCES} utils/tpwindow-utils.vala)
 set (APP_SOURCES ${APP_SOURCES} utils/tpxml.vala)
 
 

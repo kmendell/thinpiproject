@@ -24,6 +24,8 @@ project_name: thinpi
 *vala_source: interface/tpsettings.vala
 *vala_source: thinpi.vala
 *vala_source: utils/tpconfig-utils.vala
+*vala_source: utils/tpsettings-utils.vala
+*vala_source: utils/tpwindow-utils.vala
 *vala_source: utils/tpxml.vala
 
 
@@ -39,6 +41,8 @@ project_name: thinpi
 *translate: vala src/interface/tpsettings.vala
 *translate: vala src/thinpi.vala
 *translate: vala src/utils/tpconfig-utils.vala
+*translate: vala src/utils/tpsettings-utils.vala
+*translate: vala src/utils/tpwindow-utils.vala
 *translate: vala src/utils/tpxml.vala
 
 *data: data/local

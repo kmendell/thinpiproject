@@ -32,6 +32,8 @@ thinpi_sources += ['interface/tpconnect.vala']
 thinpi_sources += ['interface/tpsettings.vala']
 thinpi_sources += ['thinpi.vala']
 thinpi_sources += ['utils/tpconfig-utils.vala']
+thinpi_sources += ['utils/tpsettings-utils.vala']
+thinpi_sources += ['utils/tpwindow-utils.vala']
 thinpi_sources += ['utils/tpxml.vala']
 thinpi_link_args = ['-rdynamic']
 
