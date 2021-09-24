@@ -1,4 +1,5 @@
 Build Instructions:
+run ./build.sh
 
 cd tpmeson
 mkdir build
