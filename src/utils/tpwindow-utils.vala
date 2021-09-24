@@ -6,8 +6,18 @@ class TPWindow {
         builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"settings.ui"));
         //  builder.connect_signals (null);
         var window2 = builder.get_object ("settingsWindow") as Window;
+        var darkModeSwitch = builder.get_object("darkModeSwitch") as Switch;
         var notebookMenu = builder.get_object("settingMenuBar") as Notebook;
         window2.destroy.connect (window2.close);
+
+        darkModeSwitch.state_set.connect (() =>{
+            if (darkModeSwitch.active) {
+                Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
+            } else {
+                Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
+            }
+            return true;
+        });
         
 
         window2.show();

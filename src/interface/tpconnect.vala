@@ -8,6 +8,7 @@ int main (string[] args) {
     startconfig();
 
     try {
+        Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
         TPWindow.setupConnectManager(args);
         Gtk.main ();
     } catch (Error e) {
