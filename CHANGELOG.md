@@ -4,6 +4,6 @@
 
 Features:
 
- -- Rewrote Entire Application in Vala
- -- New Dark Mode/Light Mode Themes
- -- New Modern Material Design
+ - Rewrote Entire Application in Vala
+ - New Dark Mode/Light Mode Themes
+ - New Modern Material Design
