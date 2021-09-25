@@ -1,12 +1,12 @@
 src/classes/tppublic.vala
 src/classes/tpserverclass.vala
+src/classes/tpwindow.vala
 src/interface/tpconfig.vala
 src/interface/tpconnect.vala
 src/interface/tpsettings.vala
 src/thinpi.vala
 src/utils/tpconfig-utils.vala
 src/utils/tpsettings-utils.vala
-src/utils/tpwindow-utils.vala
 src/utils/tpxml.vala
 data/interface/configmanager.ui
 data/interface/connect-manager-debug.ui

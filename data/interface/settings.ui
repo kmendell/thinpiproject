@@ -82,7 +82,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkSwitch">
+                          <object class="GtkSwitch" id="adminSwitch">
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                           </object>
@@ -130,8 +130,9 @@
                     <property name="can-focus">False</property>
                     <child>
                       <object class="GtkLabel">
+                        <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Not Active</property>
+                        <property name="label" translatable="yes">RDP Compression</property>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -141,6 +142,7 @@
                     </child>
                     <child>
                       <object class="GtkSwitch">
+                        <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="margin-left">20</property>
                         <property name="margin-right">100</property>

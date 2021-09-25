@@ -9,5 +9,13 @@
       </description>
     </key>
 
+        <key name="adminmode" type="b">
+      <default>false</default>
+      <summary>ThinPi Admin Mode</summary>
+      <description>
+        Enabled or disables admin mode
+      </description>
+    </key>
+
   </schema>
 </schemalist>
