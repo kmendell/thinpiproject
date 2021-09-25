@@ -1,6 +1,8 @@
 # CHANGELOG.md
 
-## 0.3.0 (unreleased)
+## 0.3.0-lv1 Build 10123 (unreleased)
+
+<h3>
 
 Features:
 
@@ -11,3 +13,5 @@ Features:
  - Speed improvements when loading config/settings pages (thinpi may hang sometimes due to gtk swicthing themes, working on a fix)
  - Swicthed to GLib.settings instead of a custom xml settings file
  - Lots of code refactoring (not really a change but im adding it anyways :P)
+
+ </h3>
