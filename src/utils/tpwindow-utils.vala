@@ -7,8 +7,13 @@ class TPWindow {
         //  builder.connect_signals (null);
         var window2 = builder.get_object ("settingsWindow") as Window;
         var darkModeSwitch = builder.get_object("darkModeSwitch") as Switch;
+        var closeThinpi = builder.get_object("settingsOtherCloseButton") as Button;
         var notebookMenu = builder.get_object("settingMenuBar") as Notebook;
         window2.destroy.connect (window2.close);
+
+        closeThinpi.clicked.connect (() => {
+            Gtk.main_quit();
+        });
 
         darkModeSwitch.state_set.connect (() =>{
             if (darkModeSwitch.active) {
