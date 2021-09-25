@@ -2,9 +2,11 @@ using Gtk;
 
 class TPWindow {
 
-    public static bool darkModeEnabled = true;
+    //  public static bool darkModeEnabled = true;
 
     public static void setupSettings() {
+
+        var settings = new GLib.Settings ("us.kmprojects.thinpi");
         
         var builder = new Builder ();
         builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"settings.ui"));
@@ -21,21 +23,25 @@ class TPWindow {
             Gtk.main_quit();
         });
 
-        if (TPWindow.darkModeEnabled) {
-            Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
+        if (settings.get_boolean ("darkmode") == true) {
             darkModeSwitch.active = true;
+            Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
+            //  settings.set_boolean ("darkmode", true);
         } else {
-            Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
             darkModeSwitch.active = false;
+            Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
+            //  settings.set_boolean ("darkmode", false);
         }
 
         darkModeSwitch.state_set.connect (() =>{
             if (darkModeSwitch.active) {
                 Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
-                TPWindow.darkModeEnabled = true;
+                settings.set_boolean ("darkmode", true);
+                //  TPWindow.darkModeEnabled = true;
             } else {
                 Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
-                TPWindow.darkModeEnabled = false;
+                settings.set_boolean ("darkmode", false);
+                //  TPWindow.darkModeEnabled = false;
             }
             return true;
         });
@@ -78,6 +84,16 @@ class TPWindow {
             showConfig(args);
         });
 
+        var settings = new GLib.Settings ("us.kmprojects.thinpi");
+
+        if (settings.get_boolean ("darkmode") == true) {
+            Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
+            settings.set_boolean ("darkmode", true);
+        } else {
+            Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
+            settings.set_boolean ("darkmode", false);
+        }
+
         
         window.show_all ();
         window.fullscreen();
@@ -87,7 +103,7 @@ class TPWindow {
         foreach (TPServer? i in ThinPiPublic.publicServerArray) {
             serverList.append_text(i.serverName);
         }
-        
+
         connectButton.set_label("Connect");
         
         serverList.set_active(0);

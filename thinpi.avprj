@@ -49,9 +49,13 @@ project_name: thinpi
 
 *doc: doc
 
+*scheme: data/us.kmprojects.thinpi.gschema.xml
+
 *glade: data/interface/configmanager.ui
 *glade: data/interface/connect-manager-debug.ui
 *glade: data/interface/settings.ui
 
 *pixmap: data/pixmaps/thinpi-logo.png
+
+*build_external_program: glib-compile-schemas
 

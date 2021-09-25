@@ -3,6 +3,7 @@ project('thinpi',
 
 add_global_arguments('-DGETTEXT_PACKAGE="thinpi"',language: 'c')
 
+find_program ('glib-compile-schemas')
 atk_dep = dependency('atk')
 cairo_gobject_dep = dependency('cairo-gobject')
 gdk_3_0_dep = dependency('gdk-3.0')
@@ -20,6 +21,8 @@ meson.add_install_script(join_paths(meson.current_source_dir(),'meson_scripts','
 
 meson.add_install_script(join_paths(meson.current_source_dir(),'meson_scripts','install_data.sh'),join_paths(get_option('prefix'),get_option('datadir'),'doc','thinpi'),join_paths(meson.current_source_dir(),'doc','','*'))
 
+install_data('data/us.kmprojects.thinpi.gschema.xml', install_dir: join_paths(get_option('prefix'),get_option('datadir'), 'glib-2.0', 'schemas'))
+meson.add_install_script('meson_scripts/install_schemas.sh')
 	install_data('data/interface/configmanager.ui', install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))
 	install_data('data/interface/connect-manager-debug.ui', install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))
 	install_data('data/interface/settings.ui', install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))

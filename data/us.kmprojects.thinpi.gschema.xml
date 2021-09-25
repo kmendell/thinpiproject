@@ -1,0 +1,13 @@
+<schemalist>
+  <schema id="us.kmprojects.thinpi" path="/us/kmprojects/thinpi/" gettext-domain="thinpi">
+
+    <key name="darkmode" type="b">
+      <default>true</default>
+      <summary>ThinPi Dark Mode</summary>
+      <description>
+        State of an imaginary light switch.
+      </description>
+    </key>
+
+  </schema>
+</schemalist>

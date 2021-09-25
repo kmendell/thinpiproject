@@ -48,10 +48,16 @@ set(MODULES_TO_CHECK ${MODULES_TO_CHECK} x11)
 pkg_check_modules(DEPS REQUIRED ${MODULES_TO_CHECK})
 
 
+find_program ( WHERE_glib_compile_schemas glib-compile-schemas )
+if ( NOT WHERE_glib_compile_schemas )
+	MESSAGE(FATAL_ERROR "Error! external program 'glib-compile-schemas' is not installed.")
+endif()
+
 add_subdirectory(src/utils)
 add_subdirectory(po)
 add_subdirectory(data/pixmaps)
 add_subdirectory(src/interface)
+add_subdirectory(data)
 add_subdirectory(src/classes)
 add_subdirectory(data/interface)
 add_subdirectory(src)
