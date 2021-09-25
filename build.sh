@@ -10,3 +10,6 @@ mkdir build && cd build
 meson
 ninja
 sudo ninja install
+## cleanup
+cd ..
+rm -Rf compile
