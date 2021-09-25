@@ -1,7 +1,11 @@
 using Gtk;
 
 class TPWindow {
+
+    public static bool darkModeEnabled = true;
+
     public static void setupSettings() {
+        
         var builder = new Builder ();
         builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"settings.ui"));
         //  builder.connect_signals (null);
@@ -11,15 +15,27 @@ class TPWindow {
         var notebookMenu = builder.get_object("settingMenuBar") as Notebook;
         window2.destroy.connect (window2.close);
 
+        
+
         closeThinpi.clicked.connect (() => {
             Gtk.main_quit();
         });
 
+        if (TPWindow.darkModeEnabled) {
+            Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
+            darkModeSwitch.active = true;
+        } else {
+            Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
+            darkModeSwitch.active = false;
+        }
+
         darkModeSwitch.state_set.connect (() =>{
             if (darkModeSwitch.active) {
                 Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
+                TPWindow.darkModeEnabled = true;
             } else {
                 Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
+                TPWindow.darkModeEnabled = false;
             }
             return true;
         });
@@ -41,7 +57,7 @@ class TPWindow {
         builder.connect_signals (null);
         var window = builder.get_object ("thinpiMain") as Window;
         window.destroy.connect (Gtk.main_quit);
-        connectButton.set_label("Close (Temp)");
+        
         infoLabel.set_label("THINPI 0.3.0 (UNSTABLE BUILD) Vala 0.48.19 - DEBUG = ON");
         
 
@@ -51,7 +67,6 @@ class TPWindow {
 
         connectButton.clicked.connect (() => {
                 //  Process.spawn_command_line_sync ("/thinpi/thinpi-config", out ls_stdout, out ls_stderr, out ls_status);
-                Gtk.main_quit();
         });
 
         settingsButton.clicked.connect (() => {
@@ -72,6 +87,8 @@ class TPWindow {
         foreach (TPServer? i in ThinPiPublic.publicServerArray) {
             serverList.append_text(i.serverName);
         }
+        
+        connectButton.set_label("Connect");
         
         serverList.set_active(0);
     }
