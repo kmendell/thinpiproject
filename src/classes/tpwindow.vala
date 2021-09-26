@@ -61,6 +61,8 @@ class TPWindow {
             var builder = new Builder ();
             builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"connect-manager-debug.ui"));;
             var serverList = builder.get_object("serverSelect") as ComboBoxText;
+            var usernameText = builder.get_object("uname") as Entry;
+            var passwordText = builder.get_object("pword") as Entry;
             var wrongLabel = builder.get_object("wrongLabel") as Label;
             var settingsButton = builder.get_object("settingsButton") as Button;
             var configButton = builder.get_object("openConfigButton") as Button;
@@ -74,7 +76,9 @@ class TPWindow {
             infoLabel.set_label("THINPI 0.3.0.lv1 (UNSTABLE-DEV-ALPHA) | Update 1 | Vala 0.48.19");
     
             connectButton.clicked.connect (() => {
-                    ThinPiPublic.runCommand("tprdp");
+                int id = serverList.active;
+                    string formatted = "/usr/local/share/thinpi/tprdp %s -p %s -u %s -z -x b -g 1920x1080 -f -v".printf (ThinPiPublic.publicServerArray.get(id).serverIP, passwordText.get_text(), usernameText.get_text());
+                    ThinPiPublic.runCommand(formatted);
             });
     
             settingsButton.clicked.connect (() => {

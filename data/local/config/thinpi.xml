@@ -2,7 +2,7 @@
 <connections>
 	<server id="0">
 		<title>ThinPi Server 1</title>
-		<ip>10.3.70.2</ip>
+		<ip>10.8.43.239</ip>
         <domain>thinpi.io</domain>
 		<res>1920x1080</res>
 		<usb>1</usb>
