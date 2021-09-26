@@ -55,6 +55,7 @@ endif()
 
 add_subdirectory(src/utils)
 add_subdirectory(po)
+add_subdirectory(data/local)
 add_subdirectory(data/pixmaps)
 add_subdirectory(src/interface)
 add_subdirectory(data)

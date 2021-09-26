@@ -28,8 +28,13 @@ class TPWindow {
             SettingUtils.checkDarkMode(darkMode);
 
             aptButton.clicked.connect (() => {});
-            dnsButton.clicked.connect (() => {});
-            infoButton.clicked.connect (() => {});
+
+            dnsButton.clicked.connect (() => {
+                SettingUtils.purgeDNS();
+            });
+
+            infoButton.clicked.connect (() => {
+            });
             hostnameButton.clicked.connect (() => {});
 
             adminModeSwitch.state_set.connect (() =>{
@@ -66,15 +71,14 @@ class TPWindow {
             var window = builder.get_object ("thinpiMain") as Window;
             window.destroy.connect (Gtk.main_quit);
             
-            infoLabel.set_label("THINPI 0.3.0.lv1 (UNSTABLE-DEV-ALPHA) | Build 10123 | Vala 0.48.19");
+            infoLabel.set_label("THINPI 0.3.0.lv1 (UNSTABLE-DEV-ALPHA) | Update 1 | Vala 0.48.19");
     
             connectButton.clicked.connect (() => {
-                    ThinPiPublic.runCommand("");
+                    ThinPiPublic.runCommand("tprdp");
             });
     
             settingsButton.clicked.connect (() => {
                 showSettings(args);
-                
             });
     
             configButton.clicked.connect (() => {

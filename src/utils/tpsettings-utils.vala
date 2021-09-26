@@ -35,6 +35,10 @@ class SettingUtils {
         }
     }
 
+    public static void purgeDNS() {
+
+    }
+
     public static bool checkSetting(string key, Switch? wid) {
         var settings = new GLib.Settings ("us.kmprojects.thinpi");
         if (settings.get_boolean (key) == true) {
