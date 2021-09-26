@@ -28,7 +28,6 @@ class SettingUtils {
     }
 
     public static void setTheme(string type) {
-        var settings = new GLib.Settings ("us.kmprojects.thinpi");
         if (type == "light") {
             Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
         } else {

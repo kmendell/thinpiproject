@@ -1,34 +1,34 @@
-void writeFile (string path) {
-    var writer = new Xml.TextWriter.filename ("test.xml");
-    writer.set_indent (true);
-    writer.set_indent_string ("\t");
+//  void writeFile (string path) {
+//      var writer = new Xml.TextWriter.filename ("test.xml");
+//      writer.set_indent (true);
+//      writer.set_indent_string ("\t");
 
-    writer.start_document ();
-    writer.start_element ("root_element");
+//      writer.start_document ();
+//      writer.start_element ("root_element");
 
-    writer.start_attribute ("base64attribute");
-    writer.write_base64 ("test", 0, 4);
-    writer.end_attribute ();
+//      writer.start_attribute ("base64attribute");
+//      writer.write_base64 ("test", 0, 4);
+//      writer.end_attribute ();
 
-    writer.write_attribute ("alpha", "abcdef..");
+//      writer.write_attribute ("alpha", "abcdef..");
 
-    writer.write_element ("element", "content");
-    writer.write_element_ns ("ns", "elementWithNS", "http://www.example.org/test/ns", "contentNS");
+//      writer.write_element ("element", "content");
+//      writer.write_element_ns ("ns", "elementWithNS", "http://www.example.org/test/ns", "contentNS");
 
-    writer.write_comment ("My comment!");
-    writer.format_element_ns ("ns", "elementWithFormattedContent", "http://www.example.org/test/ns", "One: %d", 10);
+//      writer.write_comment ("My comment!");
+//      writer.format_element_ns ("ns", "elementWithFormattedContent", "http://www.example.org/test/ns", "One: %d", 10);
 
-    writer.start_element("cdataContent");
-    writer.start_cdata();
-    writer.format_string("%s beer on the wall..", "One");
-    writer.end_cdata();
-    writer.end_element();
+//      writer.start_element("cdataContent");
+//      writer.start_cdata();
+//      writer.format_string("%s beer on the wall..", "One");
+//      writer.end_cdata();
+//      writer.end_element();
 
-    writer.end_element();
-    writer.end_document();
+//      writer.end_element();
+//      writer.end_document();
 
-    writer.flush();
-}
+//      writer.flush();
+//  }
 
 
 public static void printConfig (Xml.Node* node, string node_name) {

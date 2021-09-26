@@ -211,7 +211,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkButton" id="settingsSystemDNSButton">
                 <property name="label" translatable="yes">Purge DNS Cache</property>
                 <property name="width-request">200</property>
                 <property name="visible">True</property>
@@ -226,7 +226,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkButton" id="settingsSystemInfoButton">
                 <property name="label" translatable="yes">System Info</property>
                 <property name="width-request">200</property>
                 <property name="visible">True</property>
@@ -241,7 +241,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="settingsOther">
+              <object class="GtkButton" id="settingsSystemHostnameButton">
                 <property name="label" translatable="yes">Change Hostname</property>
                 <property name="width-request">200</property>
                 <property name="visible">True</property>
