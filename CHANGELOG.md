@@ -14,5 +14,7 @@ Features:
  - Swicthed to GLib.settings instead of a custom xml settings file
  - Lots of code refactoring (not really a change but im adding it anyways :P)
  - Implemented old tprdp command to be used for connections 
+ - Added ThinPi.desktop so ThinPi gets installed as a system program shortcut
+ - Reworked Some of the code for opening windows, so its a little less laggy
 
  </h3>
