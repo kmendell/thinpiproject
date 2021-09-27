@@ -25,11 +25,12 @@ public class ThinPiPublic {
         }
     }
 
-    public static void runCommand(string cmd) {
+    public static int runCommand(string cmd) {
         var ls_stdout = "";
 	    var ls_stderr = "";
 	    var ls_status = 0;
         Process.spawn_command_line_sync (cmd, out ls_stdout, out ls_stderr, out ls_status);
+        return ls_status;
     }
     
 }

@@ -78,7 +78,11 @@ class TPWindow {
             connectButton.clicked.connect (() => {
                 int id = serverList.active;
                     string formatted = "/usr/local/share/thinpi/tprdp %s -p %s -u %s -z -x b -g 1920x1080 -f -v".printf (ThinPiPublic.publicServerArray.get(id).serverIP, passwordText.get_text(), usernameText.get_text());
-                    ThinPiPublic.runCommand(formatted);
+                    int rv = ThinPiPublic.runCommand(formatted);
+                    if (rv != 0) {
+                        usernameText.set_text("");
+                        passwordText.set_text("");
+                    }
             });
     
             settingsButton.clicked.connect (() => {

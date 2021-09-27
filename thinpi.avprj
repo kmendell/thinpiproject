@@ -49,6 +49,8 @@ project_name: thinpi
 
 *doc: doc
 
+*desktop: data/ThinPi.desktop
+
 *scheme: data/us.kmprojects.thinpi.gschema.xml
 
 *glade: data/interface/configmanager.ui
