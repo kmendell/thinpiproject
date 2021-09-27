@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=0.3.0.lv1.u1
+Name=ThinPi
+Comment=Thin Client
+Exec=thinpi
+Path=/usr/local/share/thinpi/
+Icon=/usr/local/share/thinpi/thinpi-logo.png
+Terminal=false
+Type=Application
+Categories=Utility;Development;
