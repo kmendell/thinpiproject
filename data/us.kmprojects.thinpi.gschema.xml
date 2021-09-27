@@ -17,5 +17,13 @@
       </description>
     </key>
 
+    <key name="compression" type="b">
+      <default>false</default>
+      <summary>ThinPi Compression</summary>
+      <description>
+        Enabled or disables admin mode
+      </description>
+    </key>
+
   </schema>
 </schemalist>

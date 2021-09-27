@@ -61,5 +61,6 @@ add_subdirectory(src/interface)
 add_subdirectory(data)
 add_subdirectory(src/classes)
 add_subdirectory(data/interface)
+add_subdirectory(src/classes/connection)
 add_subdirectory(src)
 

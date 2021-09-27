@@ -27,6 +27,16 @@ class SettingUtils {
         }
     }
 
+    public static void checkCompression(bool val) {
+        if (val) {
+            SettingUtils.setSetting("compression", true);
+            TPConnection.sCompression = true;
+        } else {
+            SettingUtils.setSetting("compression", false);
+            TPConnection.sCompression = false;
+        }
+    }
+
     public static void setTheme(string type) {
         if (type == "light") {
             ThinPiPublic.screenSettings.set("gtk-theme-name", "Orchis-red-light");
@@ -45,13 +55,11 @@ class SettingUtils {
             if (wid != null) {
                 wid.active = true;
             }
-            print("test: " + key);
             return true;
         } else if (settings.get_boolean (key) == false) {
             if (wid != null) {
                 wid.active = false;
             }
-            print(key);
             return false;
         } else {
             return false;

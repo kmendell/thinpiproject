@@ -141,7 +141,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkSwitch">
+                      <object class="GtkSwitch" id="compressionSwitch">
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="margin-left">20</property>

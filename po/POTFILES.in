@@ -1,3 +1,4 @@
+src/classes/connection/tpconnection.vala
 src/classes/tppublic.vala
 src/classes/tpserverclass.vala
 src/classes/tpwindow.vala

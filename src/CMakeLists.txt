@@ -36,6 +36,7 @@ set (VALA_PACKAGES ${VALA_PACKAGES} pango)
 set (VALA_PACKAGES ${VALA_PACKAGES} x11)
 
 set (APP_SOURCES ${APP_SOURCES} ${CMAKE_CURRENT_BINARY_DIR}/Config.vala)
+set (APP_SOURCES ${APP_SOURCES} classes/connection/tpconnection.vala)
 set (APP_SOURCES ${APP_SOURCES} classes/tppublic.vala)
 set (APP_SOURCES ${APP_SOURCES} classes/tpserverclass.vala)
 set (APP_SOURCES ${APP_SOURCES} classes/tpwindow.vala)

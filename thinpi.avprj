@@ -17,6 +17,7 @@ project_name: thinpi
 *vala_check_package: libxml-2.0
 *vala_check_package: pango
 *vala_check_package: x11
+*vala_source: classes/connection/tpconnection.vala
 *vala_source: classes/tppublic.vala
 *vala_source: classes/tpserverclass.vala
 *vala_source: classes/tpwindow.vala
@@ -34,6 +35,7 @@ project_name: thinpi
 *translate: glade data/interface/configmanager.ui
 *translate: glade data/interface/connect-manager-debug.ui
 *translate: glade data/interface/settings.ui
+*translate: vala src/classes/connection/tpconnection.vala
 *translate: vala src/classes/tppublic.vala
 *translate: vala src/classes/tpserverclass.vala
 *translate: vala src/classes/tpwindow.vala

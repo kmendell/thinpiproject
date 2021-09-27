@@ -11,11 +11,12 @@ class TPWindow {
             var window2 = builder.get_object ("settingsWindow") as Window;
             var darkModeSwitch = builder.get_object("darkModeSwitch") as Switch;
             var adminModeSwitch = builder.get_object("adminSwitch") as Switch;
+            var compressionSwitch = builder.get_object("compressionSwitch") as Switch;
             var closeThinpi = builder.get_object("settingsOtherCloseButton") as Button;
-            var aptButton = builder.get_object("settingsSystemAptButton") as Button;
+            //  var aptButton = builder.get_object("settingsSystemAptButton") as Button;
             var dnsButton = builder.get_object("settingsSystemDNSButton") as Button;
-            var infoButton = builder.get_object("settingsSystemInfoButon") as Button;
-            var hostnameButton = builder.get_object("settingsSystemHostnameButton") as Button;
+            //  var infoButton = builder.get_object("settingsSystemInfoButon") as Button;
+            //  var hostnameButton = builder.get_object("settingsSystemHostnameButton") as Button;
             var notebookMenu = builder.get_object("settingMenuBar") as Notebook;
             window2.destroy.connect (window2.close);
 
@@ -25,17 +26,22 @@ class TPWindow {
 
             var darkMode = SettingUtils.checkSetting("darkmode", darkModeSwitch);
             var adminMode = SettingUtils.checkSetting("adminmode", adminModeSwitch);
+            var compression = SettingUtils.checkSetting("compression", compressionSwitch);
             //  SettingUtils.checkDarkMode(darkMode);
 
-            aptButton.clicked.connect (() => {});
+            //  aptButton.clicked.connect (() => {});
 
             dnsButton.clicked.connect (() => {
                 SettingUtils.purgeDNS();
             });
 
-            infoButton.clicked.connect (() => {
+            //  infoButton.clicked.connect (() => {});
+            //  hostnameButton.clicked.connect (() => {});
+
+            compressionSwitch.state_set.connect (() => {
+                SettingUtils.checkCompression(compressionSwitch.active);
+                return true;
             });
-            hostnameButton.clicked.connect (() => {});
 
             adminModeSwitch.state_set.connect (() =>{
                 SettingUtils.checkAdminMode(adminModeSwitch.active);
@@ -74,11 +80,13 @@ class TPWindow {
             var window = builder.get_object ("thinpiMain") as Window;
             window.destroy.connect (Gtk.main_quit);
             
-            infoLabel.set_label("THINPI 0.3.0.lv1 (UNSTABLE-DEV-ALPHA) | Update 1 | Vala 0.48.19");
+            infoLabel.set_label("THINPI 0.3.0.lv1.u1 (UNSTABLE BUILD) | Vala 0.48.19");
     
             connectButton.clicked.connect (() => {
                 int id = serverList.active;
-                    string formatted = "/usr/local/share/thinpi/tprdp %s -p %s -u %s -z -x b -g 1920x1080 -f -v".printf (ThinPiPublic.publicServerArray.get(id).serverIP, passwordText.get_text(), usernameText.get_text());
+                TPConnection.sCompression = true;
+                    string formatted = "/usr/local/share/thinpi/tprdp %s -p %s -u %s -x b -g 1920x1080 -f -v %s".printf (ThinPiPublic.publicServerArray.get(id).serverIP, passwordText.get_text(), usernameText.get_text(), TPConnection.getExtrasCommand());
+                    print(formatted);
                     int rv = ThinPiPublic.runCommand(formatted);
                     if (rv != 0) {
                         usernameText.set_text("");
@@ -101,7 +109,7 @@ class TPWindow {
             window.fullscreen();
             
             wrongLabel.hide();
-            ThinPiPublic.seeServers();
+            //  ThinPiPublic.seeServers();
             foreach (TPServer? i in ThinPiPublic.publicServerArray) {
                 serverList.append_text(i.serverName);
             }

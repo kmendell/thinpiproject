@@ -40,7 +40,7 @@ public class ThinPiPublic {
 
 
 
-    public static void openWindow(string win) {
+    public static async void openWindow(string win) {
         if(win == "settings") {
             showSettings();
         }else if (win == "config") {
