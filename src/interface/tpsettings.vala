@@ -1,9 +1,13 @@
 using Gtk;
 
-int showSettings (string[] args) {
-    Gtk.init (ref args);
+int showSettings () {
+    //  Gtk.init (ref args);
 
-    Gtk.Settings.get_default().set("gtk-theme-name", "ThinPi-red-dark");
+    var darkMode = SettingUtils.checkSetting("darkmode", null);
+
+    if (darkMode) {
+        ThinPiPublic.setDefaultTheme("dark");
+    }
     TPWindow.setupSettings();
 
     return 0;

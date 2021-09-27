@@ -25,7 +25,7 @@ class TPWindow {
 
             var darkMode = SettingUtils.checkSetting("darkmode", darkModeSwitch);
             var adminMode = SettingUtils.checkSetting("adminmode", adminModeSwitch);
-            SettingUtils.checkDarkMode(darkMode);
+            //  SettingUtils.checkDarkMode(darkMode);
 
             aptButton.clicked.connect (() => {});
 
@@ -43,6 +43,7 @@ class TPWindow {
             });
 
             darkModeSwitch.state_set.connect (() =>{
+                SettingUtils.setSetting("darkmode", darkModeSwitch.active);
                 SettingUtils.checkDarkMode(darkModeSwitch.active);
                 return true;
             });
@@ -86,15 +87,15 @@ class TPWindow {
             });
     
             settingsButton.clicked.connect (() => {
-                showSettings(args);
+                //  showSettings();
+                ThinPiPublic.openWindow("settings");
             });
     
             configButton.clicked.connect (() => {
-                showConfig(args);
+                //  showConfig(args);
+                ThinPiPublic.openWindow("config");
             });
-    
-            var darkMode = SettingUtils.checkSetting("darkmode", null);
-            SettingUtils.checkDarkMode(darkMode);
+            //  SettingUtils.checkDarkMode(darkMode);
             
             window.show_all ();
             window.fullscreen();

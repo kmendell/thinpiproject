@@ -29,9 +29,9 @@ class SettingUtils {
 
     public static void setTheme(string type) {
         if (type == "light") {
-            Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-light");
+            ThinPiPublic.screenSettings.set("gtk-theme-name", "Orchis-red-light");
         } else {
-            Gtk.Settings.get_default().set("gtk-theme-name", "Orchis-red-dark");
+            ThinPiPublic.screenSettings.set("gtk-theme-name", "Orchis-red-dark");
         }
     }
 
@@ -45,13 +45,15 @@ class SettingUtils {
             if (wid != null) {
                 wid.active = true;
             }
-            print(key);
+            print("test: " + key);
             return true;
-        } else {
+        } else if (settings.get_boolean (key) == false) {
             if (wid != null) {
                 wid.active = false;
             }
             print(key);
+            return false;
+        } else {
             return false;
         }
     }
