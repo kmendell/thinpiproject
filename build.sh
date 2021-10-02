@@ -3,7 +3,7 @@ mkdir compile
 cd compile
 git clone https://github.com/vinceliuice/Orchis-theme.git theme
 cd theme
-./install.sh -t red --name ThinPi --color dark
+./install.sh -t red --name ThinPi
 cd ../..
 ## Compile and install ThinPi
 mkdir build && cd build
