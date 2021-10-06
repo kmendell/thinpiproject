@@ -66,7 +66,8 @@ class TPWindow {
 
         try {
             var builder = new Builder ();
-            builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"connect-manager-debug.ui"));;
+            builder.add_from_file(GLib.Path.build_filename(Constants.PKGDATADIR,"connect-manager-debug.ui"));
+           var settingsWindow = builder.get_object("settingsWindow") as Window;
             var serverList = builder.get_object("serverSelect") as ComboBoxText;
             var usernameText = builder.get_object("uname") as Entry;
             var passwordText = builder.get_object("pword") as Entry;
@@ -96,7 +97,8 @@ class TPWindow {
     
             settingsButton.clicked.connect (() => {
                 //  showSettings();
-                ThinPiPublic.openWindow("settings");
+               ThinPiPublic.openWindow("settings");
+
             });
     
             configButton.clicked.connect (() => {
@@ -107,7 +109,7 @@ class TPWindow {
             
             window.show_all ();
             window.fullscreen();
-            
+            //  (settingsWindow.hide());
             wrongLabel.hide();
             //  ThinPiPublic.seeServers();
             foreach (TPServer? i in ThinPiPublic.publicServerArray) {

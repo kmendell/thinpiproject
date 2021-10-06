@@ -26,6 +26,7 @@ install_data('data/us.kmprojects.thinpi.gschema.xml', install_dir: join_paths(ge
 meson.add_install_script('meson_scripts/install_schemas.sh')
 	install_data('data/interface/configmanager.ui', install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))
 	install_data('data/interface/connect-manager-debug.ui', install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))
+	install_data('data/interface/thinpi-aio.ui', install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))
 	install_data('data/interface/settings.ui', install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))
 install_data('data/pixmaps/thinpi-logo.png',install_dir: join_paths(get_option('prefix'),get_option('datadir'),'thinpi'))
 subdir('src')

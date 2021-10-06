@@ -35,6 +35,7 @@ project_name: thinpi
 *translate: glade data/interface/configmanager.ui
 *translate: glade data/interface/connect-manager-debug.ui
 *translate: glade data/interface/settings.ui
+*translate: glade data/interface/thinpi-aio.ui
 *translate: vala src/classes/connection/tpconnection.vala
 *translate: vala src/classes/tppublic.vala
 *translate: vala src/classes/tpserverclass.vala
@@ -58,6 +59,7 @@ project_name: thinpi
 *glade: data/interface/configmanager.ui
 *glade: data/interface/connect-manager-debug.ui
 *glade: data/interface/settings.ui
+*glade: data/interface/thinpi-aio.ui
 
 *pixmap: data/pixmaps/thinpi-logo.png
 
