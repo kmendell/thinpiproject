@@ -2,8 +2,6 @@
 
 ## 0.3.0-lv1 Build 10123 (unreleased)
 
-<h3>
-
 Features:
 
  - Rewrote Entire Application in Vala
@@ -16,5 +14,3 @@ Features:
  - Implemented old tprdp command to be used for connections 
  - Added ThinPi.desktop so ThinPi gets installed as a system program shortcut
  - Reworked Some of the code for opening windows, so its a little less laggy
-
- </h3>
